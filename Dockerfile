@@ -20,4 +20,4 @@ COPY --from=builder /app/package.json ./package.json
 COPY --from=builder /app/prisma ./prisma
 EXPOSE 3003
 RUN ls -R dist
-CMD ["node", "dist/src/main.js"]
+CMD ["node", "dist/main.js"]
