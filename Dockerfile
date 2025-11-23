@@ -18,4 +18,5 @@ COPY --from=builder /app/node_modules ./node_modules
 COPY --from=builder /app/package.json ./package.json
 COPY --from=builder /app/prisma ./prisma
 EXPOSE 3003
-CMD ["node", "dist/main.js"]
+RUN ls -R dist
+CMD ["node", "dist/src/main.js"]
