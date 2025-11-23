@@ -12,7 +12,7 @@ RUN npx prisma generate && npm run build
 RUN echo "=== Build complete, checking dist folder ===" && ls -R dist || echo "dist folder not found"
 
 FROM node:20-alpine AS runner
-RUN apk add --no-cache openssl1.1-compat
+RUN apk add --no-cache openssl-dev
 WORKDIR /app
 ENV NODE_ENV=production
 COPY --from=builder /app/dist ./dist
