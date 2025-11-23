@@ -9,6 +9,7 @@ WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 RUN npx prisma generate && npm run build
+RUN echo "=== Build complete, checking dist folder ===" && ls -R dist || echo "dist folder not found"
 
 FROM node:20-alpine AS runner
 WORKDIR /app
