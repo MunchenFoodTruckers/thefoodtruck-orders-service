@@ -19,5 +19,9 @@
         "noFallthroughCasesInSwitch": false,
         "moduleResolution": "node",
         "esModuleInterop": true
-    }
+    },
+    "include": [
+        "src",
+        "prisma"
+    ]
 }
